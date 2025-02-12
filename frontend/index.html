@@ -11,11 +11,20 @@
     <script src="script.js" defer></script>
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&family=Satisfy&family=Lobster&display=swap');
+        
+        @keyframes zoomBackground {
+            0% { background-size: 100%; }
+            50% { background-size: 110%; }
+            100% { background-size: 100%; }
+        }
+        
         body {
-            background-image: url('images/background.jpg') ;
-            background-size:cover;
+            background-image: url('images/background.jpg');
+            background-size: cover;
             background-position: center;
-            display:flex;
+            background-repeat: no-repeat;
+            animation: zoomBackground 15s ease-in-out infinite;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -24,25 +33,30 @@
             margin: 0;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            color: white;
+            color: rgb(255, 251, 251);
         }
+    
         .navbar {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px;
-            /* background: rgba(0, 0, 0, 0.7); */
+            justify-content: flex-end;
+            align-items: right;
+            padding: 3px;
             border-radius: 10px;
-            position:absolute;
+            position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
+            width: 39%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
         }
         .navbar a {
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 10px;
             font-size: 18px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -51,50 +65,54 @@
             border-radius: 5px;
         }
         #content {
-            background: none;
-            padding: 0;
-            border-radius: 0;
-            width: auto;
+          text-shadow: 10px 10px 5px rgb(34, 39, 38);
+            padding: 30px;
         }
         h1 {
             font-size: 50px;
             font-weight: bold;
-            margin-bottom: 10px;
-            font-family: Dancing Script;
+            font-family: 'Dancing Script', cursive;
             color: white;
         }
         p {
-            font-size: 20px;
-            color: white;
+            font-size: 35px;
+            font-family: 'Dancing Script', cursive;
+            color: rgb(0, 0, 0);
         }
-        body::before {
-            content: "";
+        .footer {
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 10px;
             width: 100%;
-            height: 100%;
+            text-align: center;
+            padding: 10px;
             background: rgba(0, 0, 0, 0.7);
-            z-index: -2;
+            color: white;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <!-- <a href="index.html">Home</a>
-        <a href="register.html">Register</a>
-        <a href="download.html">Download</a>
-        <a href="client.html">Client</a>
-        <a href="vendor.html">Vendor</a> -->
-        <a href="login.html">Login</a>
-        <a href="signup.html">Signup</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="download.html">Download</a>
+            <a href="client.html">Client</a>
+            <a href="vendor.html">Vendor</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </div>
     </nav>
     
     <div id="content">
         <h1>Welcome to CaterBuddy</h1>
-        <p>Select a page from the navigation bar.</p>
+        <p>Your premium catering solution at your fingertips.</p>
     </div>
-
+    
+    <!-- <footer class="footer">
+        &copy; 2025 CaterBuddy. All Rights Reserved.
+    </footer> -->
+    
     <script src="script.js"></script>
 </body>
 </html>
